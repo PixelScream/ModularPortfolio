@@ -1,0 +1,19 @@
+{
+    "art":[{
+              "title"         : "jpg1",
+              "url"           : "img/render1.jpg",
+              "description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in accumsan risus."
+            },
+            {
+              "title"         : "jpg2",
+              "url"           : "img/render2.jpg",
+              "description"   : "Morbi eu nunc consectetur, dictum orci et, venenatis quam. Morbi porta porta tincidunt."
+            },
+            {
+              "title"         : "jpg3",
+               "url"          : "img/render3.jpg",
+               "description"  : "Nam convallis dapibus egestas. Nunc viverra efficitur justo."
+            }],
+  "info"    : "hello world",
+  "contact" : "stop following me"
+}
