@@ -1,0 +1,44 @@
+#pronav {
+  position:fixed;
+  top:50%;
+  left:20px;
+  width:24px;
+  display:block;
+  z-index:99;
+  float:none;
+  font-size:20px;
+}
+.fa-menu-o:before {
+  content: "\f10c";
+}
+.fa-menu-o:hover:before,
+.fa-menu-o.current:before{
+  content: "\f111";
+}
+.pro-i {
+display: block;
+margin-bottom: 5px;
+cursor: pointer;
+}
+.pro-i:after {
+right: -100px;
+content: attr(title);
+display: block;
+position: absolute;
+white-space: nowrap;
+width: 100px;
+z-index: 98;
+margin-top: -20px;
+visibility: hidden;
+opacity: 0;
+-webkit-transition: right 0.1s ease-out, opacity 0.1s ease-out;
+-moz-transition: right 0.1s ease-out, opacity 0.1s ease-out;
+transition: right 0.1s ease-out, opacity 0.1s ease-out;
+}
+
+.pro-i:hover:after {
+  right: -110px;
+  visibility: visible;
+  opacity: 1;
+}
+

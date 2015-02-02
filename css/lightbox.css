@@ -1,0 +1,15 @@
+#lightbox{
+  position:fixed;
+  background:green;
+  width:auto;
+  min-width:100px;
+  max-width:80%;
+  min-height:100px;
+  top:0;
+  left:0;
+  right:0;
+  margin:auto;
+}
+#lightbox img{
+  height:50%;
+}

@@ -1,19 +1,45 @@
 {
-    "art":[{
-              "title"         : "jpg1",
-              "url"           : "img/render1.jpg",
-              "description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in accumsan risus."
-            },
-            {
-              "title"         : "jpg2",
-              "url"           : "img/render2.jpg",
-              "description"   : "Morbi eu nunc consectetur, dictum orci et, venenatis quam. Morbi porta porta tincidunt."
-            },
-            {
-              "title"         : "jpg3",
-               "url"          : "img/render3.jpg",
-               "description"  : "Nam convallis dapibus egestas. Nunc viverra efficitur justo."
-            }],
-  "info"    : "hello world",
-  "contact" : "stop following me"
+"art":[{
+          "title"         : "Render 1",
+          "url"           : "img/render1.jpg",
+          "description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in accumsan risus."
+        },
+        {
+          "title"         : "Render 2",
+          "url"           : "img/render2.jpg",
+          "description"   : "Morbi eu nunc consectetur, dictum orci et, venenatis quam. Morbi porta porta tincidunt."
+        },
+        {
+          "title"         : "Render 3",
+           "url"          : "img/render3.jpg",
+           "description"  : "Nam convallis dapibus egestas. Nunc viverra efficitur justo."
+        },
+        {
+          "title"         : "Render 1",
+          "url"           : "img/render1.jpg",
+          "description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in accumsan risus."
+        },
+        {
+          "title"         : "Render 2",
+          "url"           : "img/render2.jpg",
+          "description"   : "Morbi eu nunc consectetur, dictum orci et, venenatis quam. Morbi porta porta tincidunt."
+        },
+        {
+          "title"         : "Render 3",
+           "url"          : "img/render3.jpg",
+           "description"  : "Nam convallis dapibus egestas. Nunc viverra efficitur justo."
+        }],
+"info"  :[{
+          "site"  : "facebook",
+          "url"   : "https://www.facebook.com/DickieMcCarthy"
+        },
+        {
+          "site"  : "tumblr",
+          "url"   : "http://blog.pixelscream.net/"
+          },
+          {
+          "site"  : "github",
+          "url"  : "https://github.com/pixelscream"
+        }],
+"contact" : "stop following me"
 }
