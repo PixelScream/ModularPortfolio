@@ -90,7 +90,11 @@ function PrintPage(){
       });
     }, Promise.resolve());
 }
+/*//////////////
 
+///// Main
+
+//////////////*/
 get('website.content').then(function(response) {
   console.log("Success!");
   content = JSON.parse(response);
@@ -102,11 +106,20 @@ get('website.content').then(function(response) {
   return PrintPage();
 
 }).then(function() {
+  return getPageInfo();
+
+}).then(function(newBoard) {
+  contentWrapper.innerHTML += newBoard;
+
+}).then(function() {
   LoadProNav();
 
 }).then(function() {
   document.getElementById('preload').style.display = 'none';
+  //FadeOut(document.getElementById('preload'));
   //TweenLite.To(document.getElementById('preload'), 1, {css:{opacity: "0"}});
+}).then(function() {
+  LoadLightBox();
 });
 
 function getPageItem(r) {
@@ -141,11 +154,23 @@ function getImg(url) {
   });
 }
 
+function getPageInfo() {
+  var pageContent = '<div class="render-holder">'
+                + '<h1>Info</h1> <div id="social-holder">';
+  for(i=0; i< content.info.length; i++) {
+    pageContent += '<a href="' + content.info[i].url + '" target="_blank"  >'
+                + '<i class="fa fa-' + content.info[i].site + '"></i>'
+                + '</a>';
+  }
+  pageContent += '</div> </div>';
+  return pageContent;
+}
 
 function LoadProNav() {
   var newStyle = "<style>";
-  var contentChildren = document.getElementById("content").children;
   var proNav = document.getElementById("pronav");
+  var contentChildren = document.getElementById("content").children;
+
   for (var i = 0; i < contentChildren.length; i++) {
     var tooltip = contentChildren[i].getElementsByTagName('h1')[0].textContent;
     var icon = "<i class=\"fa fa-menu-o pro-i " + i + "\" title=\"" + tooltip + "\"></i>";
@@ -160,12 +185,10 @@ function LoadProNav() {
   for (var i = 0; i < proNavChildren.length; i++) {
     var r = proNavChildren[i]
     proNavChildren[i].onclick = function () {
-      console.log(this);
-      var v = this.className
-      v = v.charAt(v.length - 1);
-      v = parseInt(v);
+      var v = this.className;
+      v = parseInt(v.charAt(v.length - 1));
       var newY = contentChildren[v].offsetTop;
-      TweenLite.to(window, 2, {scrollTo:{y:(newY - scrollTopOffset)}, ease:Power2.easeOut});
+      ScrollX(newY);
       for(b = 0; b < proNavChildren.length; b++) {
         proNavChildren[b].classList.remove('current');
       }
@@ -173,4 +196,23 @@ function LoadProNav() {
     }
   }
 
+}
+
+function LoadLightBox(){
+
+}
+
+function ScrollX (x) {
+  TweenLite.to(window, 2, {scrollTo:{y:(x - 100)}, ease:Power2.easeOut});
+}
+
+
+
+function FadeIn (el) {
+  el.style.display = "";
+  TweenLite.to(el, 1, {css:{opacity:1}, ease:Power2.easeOut});
+}
+
+function FadeOut (el) {
+  TweenLite.to(el, 1, {css:{opacity:0}, ease:Power2.easeOut, onComplete:el.style.display = "none"});
 }
