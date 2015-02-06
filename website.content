@@ -13,33 +13,24 @@
           "title"         : "Render 3",
            "url"          : "img/render3.jpg",
            "description"  : "Nam convallis dapibus egestas. Nunc viverra efficitur justo."
-        },
-        {
-          "title"         : "Render 1",
-          "url"           : "img/render1.jpg",
-          "description"   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in accumsan risus."
-        },
-        {
-          "title"         : "Render 2",
-          "url"           : "img/render2.jpg",
-          "description"   : "Morbi eu nunc consectetur, dictum orci et, venenatis quam. Morbi porta porta tincidunt."
-        },
-        {
-          "title"         : "Render 3",
-           "url"          : "img/render3.jpg",
-           "description"  : "Nam convallis dapibus egestas. Nunc viverra efficitur justo."
         }],
-"info"  :[{
-          "site"  : "facebook",
-          "url"   : "https://www.facebook.com/DickieMcCarthy"
+"info"  :{
+        "name"        : "Dickie McCarthy",
+        "title"       : "Environment & Technical Artist",
+        "medilinks"   : [{
+                          "site"  : "facebook",
+                          "url"   : "https://www.facebook.com/DickieMcCarthy"
+                        },
+                        {
+                          "site"  : "tumblr",
+                          "url"   : "http://blog.pixelscream.net/"
+                          },
+                          {
+                          "site"  : "github",
+                          "url"  : "https://github.com/pixelscream"
+                        }],
+        "bio"         : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in accumsan risus.",
+        "picture"     : "img/dp.png"
         },
-        {
-          "site"  : "tumblr",
-          "url"   : "http://blog.pixelscream.net/"
-          },
-          {
-          "site"  : "github",
-          "url"  : "https://github.com/pixelscream"
-        }],
 "contact" : "stop following me"
 }

@@ -32,50 +32,7 @@ function get(url) {
   });
 }
 
-/*
 
-
-  // Map our array of chapter urls to
-  // an array of chapter json promises.
-  // This makes sure they all download parallel.
-  return story.chapterUrls.map(getJSON)
-    .reduce(function(sequence, chapterPromise) {
-      // Use reduce to chain the promises together,
-      // adding content to the page for each chapter
-      return sequence.then(function() {
-        // Wait for everything in the sequence so far,
-        // then wait for this chapter to arrive.
-        return chapterPromise;
-      }).then(function(chapter) {
-        addHtmlToPage(chapter.html);
-      });
-    }, Promise.resolve());
-}).then(function() {
-  addTextToPage("All done");
-}).catch(function(err) {
-  // catch any error that happened along the way
-  addTextToPage("Argh, broken: " + err.message);
-}).then(function() {
-  document.querySelector('.spinner').style.display = 'none';
-
-*/
-/*
-  // Map our array of chapter urls to
-  // an array of chapter json promises.
-  // This makes sure they all download parallel.
-  return content.art.map(getPageItem)
-    .reduce(function(sequence, chapterPromise) {
-      // Use reduce to chain the promises together,
-      // adding content to the page for each chapter
-      return sequence.then(function() {
-        // Wait for everything in the sequence so far,
-        // then wait for this chapter to arrive.
-        return chapterPromise;
-      }).then(function(chapter) {
-        contentWrapper.innerHTML += chapter;
-      });
-    }, Promise.resolve());
-  */
 function PrintPage(){
   return content.art.map(getPageItem)
     .reduce(function(sequence, boardPromise) {
@@ -156,10 +113,12 @@ function getImg(url) {
 
 function getPageInfo() {
   var pageContent = '<div class="render-holder">'
+                + '<img class="dp" src="' + content.info.picture + '" />'
                 + '<h1>Info</h1> <div id="social-holder">';
-  for(i=0; i< content.info.length; i++) {
-    pageContent += '<a href="' + content.info[i].url + '" target="_blank"  >'
-                + '<i class="fa fa-' + content.info[i].site + '"></i>'
+
+  for(i=0; i< content.info.medilinks.length; i++) {
+    pageContent += '<a href="' + content.info.medilinks[i].url + '" target="_blank"  >'
+                + '<i class="fa fa-' + content.info.medilinks[i].site + '"></i>'
                 + '</a>';
   }
   pageContent += '</div> </div>';

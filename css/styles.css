@@ -9,12 +9,15 @@ body {
   margin: 0 auto;
   width:100%;
   max-width:700px;
+  min-width:300px;
   margin-top: 60px;
 }
 .render-holder {
   background-color: #F8F8F8;
   border: 1px solid rgba(0,0,0,0.1);
   margin-bottom:20px;
+  box-shadow: 0 0 120px rgba(30,30,30,0.1),
+              0 0 10px rgba(30,30,30,0.1);
 }
 h1, p {
   padding: 15px 20px 30px;
@@ -84,3 +87,17 @@ border-color: transparent transparent #F8F8F8 transparent;
 #social-holder i:hover:before{
   background:#444;
 }
+.dp {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  -webkit-border-radius : 300px;
+  -moz-border-radius    : 300px;
+  border-radius         : 300px;
+  z-index: 50;
+  margin: 20px auto 0;
+}
+
+
+
+

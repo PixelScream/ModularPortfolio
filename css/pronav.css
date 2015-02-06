@@ -30,6 +30,7 @@ width: 100px;
 z-index: 98;
 margin-top: -20px;
 visibility: hidden;
+font-family: 'Open Sans', sans-serif;
 opacity: 0;
 -webkit-transition: right 0.1s ease-out, opacity 0.1s ease-out;
 -moz-transition: right 0.1s ease-out, opacity 0.1s ease-out;
