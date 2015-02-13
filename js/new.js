@@ -1,3 +1,5 @@
+var feedEntries = 8;
+
 var content;
 var contentWrapper = document.getElementById('content');
 var renders = [];
@@ -63,6 +65,9 @@ get('website.content').then(function(response) {
   return PrintPage();
 
 }).then(function() {
+  return getRSSFeed();
+
+}).then(function() {
   return getPageInfo();
 
 }).then(function(newBoard) {
@@ -109,6 +114,34 @@ function getImg(url) {
       resolve(img);
     }
   });
+}
+
+/*/////////////////////////////////////////////////////////////////////////////
+////////
+////////      RSS Feed Parsings
+////////
+/////////////////////////////////////////////////////////////////////////////*/
+
+function getRSSFeed() {
+  var feed = new google.feeds.Feed('http://blog.pixelscream.net/rss');
+  feed.setNumEntries(feedEntries);
+  feed.load(function (data) {
+      // Parse data depending on the specified response format, default is JSON.
+      console.dir(data.feed);
+      console.dir(data.feed.entries[0].content);
+      var pageContent = '';
+      for(i = 0; i < data.feed.entries.length; i++) {
+        pageContent += '<a class="rss-entry" target="_blank" href="'
+                    + data.feed.entries[i].link + '">'
+                    + data.feed.entries[i].title
+                    + '</a>';
+      }
+      addToPage(pageContent);
+  });
+}
+
+function addToPage(pageContent) {
+  contentWrapper.innerHTML +='<div class="board">' + pageContent + '</div>';
 }
 
 function getPageInfo() {
