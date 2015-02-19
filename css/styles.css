@@ -114,3 +114,6 @@ border-color: transparent transparent #F8F8F8 transparent;
   background: linear-gradient(135deg, #d3ffe9 0%,#ffd8e2 100%);
 }
 
+#logo {
+  max-height:100px;
+}
