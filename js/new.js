@@ -123,7 +123,7 @@ function getImg(url) {
 /////////////////////////////////////////////////////////////////////////////*/
 
 function getRSSFeed() {
-  var feed = new google.feeds.Feed('http://blog.pixelscream.net/rss');
+  var feed = new google.feeds.Feed('http://pixelscream.net/feed.xml');
   feed.setNumEntries(feedEntries);
   feed.load(function (data) {
       // Parse data depending on the specified response format, default is JSON.
